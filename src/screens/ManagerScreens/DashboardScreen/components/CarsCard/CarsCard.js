@@ -3,6 +3,9 @@ import {View, Text, Image} from 'react-native';
 import styles from './CarsCardStyles';
 
 const CarsCard = ({data}) => {
+  if (!data) {
+    return null;
+  }
   const modelImageMap = {
     Sedan: require('../../../../../assets/Images/sedan.png'),
     Hatchback: require('../../../../../assets/Images/hatchback.png'),

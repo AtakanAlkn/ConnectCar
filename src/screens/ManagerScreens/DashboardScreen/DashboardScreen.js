@@ -12,13 +12,13 @@ const DashboardScreen = () => {
   const onDeneme = () => {
     newReference
       .push({
-        brand: 'Volkswagen',
-        model: 'Golf',
+        brand: 'Fiat',
+        model: 'Ducato',
         year: 2020,
-        style: 'Hatchback',
-        inUse: false,
+        style: 'Van',
+        inUse: true,
         driver: null,
-        license: '999DSE',
+        license: '25E87',
       })
       .then(() => console.log('Data updated.'));
   };

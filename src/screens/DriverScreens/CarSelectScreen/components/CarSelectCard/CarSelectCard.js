@@ -14,6 +14,7 @@ const CarSelectCard = ({data, onPress}) => {
   const modelImage =
     modelImageMap[data.style] ||
     require('../../../../../assets/Images/sedan.png');
+
   return (
     <TouchableOpacity style={styles.container} onPress={onPress}>
       <Image source={modelImage} style={styles.image} />
