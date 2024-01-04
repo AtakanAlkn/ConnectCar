@@ -8,7 +8,7 @@ const SecondWarning = () => {
   return (
     <View style={styles.container}>
       <View style={styles.topContainer}>
-        <Image source={require('../../../../assets/Images/second.png')} />
+        <Image source={require('../../../../../assets/Images/second.png')} />
       </View>
       <View style={styles.bottomContainer}>
         <Text style={styles.title}>Sürüş Kaydı</Text>

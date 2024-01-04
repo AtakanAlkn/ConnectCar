@@ -1,9 +1,9 @@
 import React from 'react';
 import {View, StatusBar} from 'react-native';
-import styles from './UserSelectionScreenStyles';
+import styles from './UserSelectScreenStyles';
 import Button from '../../components/Button';
 
-const UserSelectionScreen = ({navigation}) => {
+const UserSelectScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor="#253343" />
@@ -21,4 +21,4 @@ const UserSelectionScreen = ({navigation}) => {
   );
 };
 
-export default UserSelectionScreen;
+export default UserSelectScreen;

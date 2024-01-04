@@ -1,16 +1,16 @@
 import React from 'react';
 import {View, Text, Image} from 'react-native';
 import styles from './WarningStyles';
-import Button from '../../../../components/Button';
+import Button from '../../../../../components/Button';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-const ThirdWarning = () => {
+const ThirdWarning = ({onPress}) => {
   const hint =
     '  Sürüş esnasında, uygulamamız size yolculuk bilgileri sunar. Mesafe, hız, varış süresi gibi bilgiler, sürüşünüzü daha iyi planlamanıza yardımcı olur.';
   return (
     <View style={styles.container}>
       <View style={styles.topContainer}>
-        <Image source={require('../../../../assets/Images/third.png')} />
+        <Image source={require('../../../../../assets/Images/third.png')} />
       </View>
       <View style={styles.bottomContainer}>
         <Text style={styles.title}>Yolculuk Bilgilendirmesi</Text>
@@ -25,7 +25,7 @@ const ThirdWarning = () => {
             paddingHorizontal: 10,
             marginTop: 10,
           }}>
-          <Button title="Sürüşe Başla" />
+          <Button title="Sürüşe Başla" onPress={onPress} />
           <Icon name="steering" size={30} color="white" />
         </View>
       </View>

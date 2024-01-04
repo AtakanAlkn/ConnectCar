@@ -1,8 +1,8 @@
 import React from 'react';
 import {View, Text, Image} from 'react-native';
 import styles from './LoginScreenStyles';
-import Input from '../../components/Input';
-import Button from '../../components/Button';
+import Input from '../../../components/Input';
+import Button from '../../../components/Button';
 
 const LoginScreen = ({navigation}) => {
   return (
@@ -10,7 +10,7 @@ const LoginScreen = ({navigation}) => {
       <View style={styles.innerContainer}>
         <View style={styles.imageContainer}>
           <Image
-            source={require('../../assets/Images/LoginCar.png')}
+            source={require('../../../assets/Images/loginCar.png')}
             style={styles.image}
           />
           <Text style={styles.header}>Giriş Yap</Text>

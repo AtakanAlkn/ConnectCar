@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "31313815225",
+    "project_id": "connectcar-c1ee5",
+    "storage_bucket": "connectcar-c1ee5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:31313815225:android:bcbbd3c9a3eec38fc05d68",
+        "android_client_info": {
+          "package_name": "com.connectcar"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzXGmGmZMdY8ClE0yEbStXmw6ZPq-QYdE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

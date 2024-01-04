@@ -1,12 +1,15 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View} from 'react-native';
 import styles from './DrivingWarningScreenStyles';
 import FirstWarning from './components/Warnings/FirstWarning';
 import SecondWarning from './components/Warnings/SecondWarning';
 import ThirdWarning from './components/Warnings/ThirdWarning';
 import Swiper from 'react-native-swiper';
 
-const DrivingWarningScreen = () => {
+const DrivingWarningScreen = ({navigation}) => {
+  const onStart = () => {
+    navigation.navigate('CarSelectScreen');
+  };
   return (
     <View style={styles.container}>
       <Swiper
@@ -15,7 +18,7 @@ const DrivingWarningScreen = () => {
         activeDot={<View style={styles.activeDot} />}>
         <FirstWarning />
         <SecondWarning />
-        <ThirdWarning />
+        <ThirdWarning onPress={onStart} />
       </Swiper>
     </View>
   );

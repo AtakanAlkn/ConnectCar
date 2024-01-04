@@ -8,7 +8,7 @@ const FirstWarning = () => {
   return (
     <View style={styles.container}>
       <View style={styles.topContainer}>
-        <Image source={require('../../../../assets/Images/first.png')} />
+        <Image source={require('../../../../../assets/Images/first.png')} />
       </View>
       <View style={styles.bottomContainer}>
         <Text style={styles.title}>Güvenli Sürüş</Text>
