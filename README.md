@@ -1,79 +1,104 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# ConnectCar
 
-# Getting Started
+## Overview
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+**ConnectCar** is a mobile application that aims to improve the driving experience with advanced vehicle tracking and driver management features. Seamlessly integrates with Arduino-based hardware, enabling real-time transfer of important vehicle data to the app via Bluetooth. ConnectCar leverages the power of Firebase Authentication and Realtime Database to provide secure user authentication and streamlined data storage.
 
-## Step 1: Start the Metro Server
+**Bluetooth Module Under Development**
+I would like to inform you that the Bluetooth module is currently under development. I anticipate completing this module shortly and appreciate your patience. Stay tuned for the upcoming release!
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+## Project Preview
 
-To start Metro, run the following command from the _root_ of your React Native project:
+<div style="display: flex; flex-direction: row; justify-content: center;">
+<div style="display: flex; flex-direction: row; margin-right: 20; margin-bottom: 10;">
+    <img src="images/h1.gif" alt="Preview Gif" width="300">
+  </div>
+    <hr>
+  <div style="display: flex; flex-direction: row; margin-right: 20; margin-bottom: 10;">
+    <img src="images/m1.jpeg" alt="Main Screen" width="300" style="margin-right: 200;">
+    <img src="images/m2.jpeg" alt="Create Account" width="300">
+  </div>
+    <hr>
+  <div style="display: flex; flex-direction: row; margin-right: 20;margin-bottom: 10;"> 
+    <img src="images/m3.jpeg" alt="Create Account" width="300" style="margin-right: 200;">
+     <img src="images/m4.jpeg" alt="Login" width="300" style="margin-right: 20;justify-content: center;">
+  </div>
+    <hr>
+  <div style="display: flex; flex-direction: row; margin-right: 20;margin-bottom: 10;"> 
+    <img src="images/m5.jpeg" alt="Rooms" width="300" style="margin-right: 200;">
+     <img src="images/m6.jpeg" alt="Chat" width="300" style="margin-right: 20;justify-content: center;">
+  </div>
+  </div>
 
-```bash
-# using npm
-npm start
+## Features
 
-# OR using Yarn
-yarn start
-```
+- **Vehicle Tracking:** Arduino-based hardware provides real-time data about the vehicle's status and location.
+- **Driver Management:** ConnectCar facilitates efficient management of drivers, their profiles, and driving history.
+- **Firebase Integration:** Utilizes Firebase for secure email-based login/logout and real-time database functionality.
 
-## Step 2: Start your Application
+## Technologies Used
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+- React Native: A widely-used JavaScript framework for building cross-platform mobile applications.
+- Firebase: Firebase Authentication and Realtime Database services provide a robust and secure infrastructure.
+- Arduino: Hardware integration for collecting real-time vehicle data.
 
-### For Android
+## Getting Started
 
-```bash
-# using npm
-npm run android
+To run this project locally, follow these steps:
 
-# OR using Yarn
-yarn android
-```
+1. **Clone the repository:**
 
-### For iOS
+   ```bash
+   https://github.com/AtakanAlkn/ConnectCar.git
 
-```bash
-# using npm
-npm run ios
 
-# OR using Yarn
-yarn ios
-```
+   ```
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+2. **Navigate to the project directory:**
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+   cd ConnectCar.git
 
-## Step 3: Modifying your App
+3. **Install dependencies:**
 
-Now that you have successfully run the app, let's modify it.
+   npm install
+   or
+   yarn install
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+4. **Start the development server:**
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+   npm start
+   or
+   yarn start
 
-## Congratulations! :tada:
+5. **Run on iOS or Android:**
 
-You've successfully run and modified your React Native App. :partying_face:
+   To run the app on iOS or Android simulators/emulators, use the following commands respectively:
 
-### Now what?
+   npm run ios
+   npm run android
+   or
+   yarn ios
+   yarn android
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
+**Congratulations!**
+You've successfully set up and started the project locally. Feel free to explore the code, make changes, and test new features.
 
-# Troubleshooting
+**Troubleshooting**
+If you encounter any issues during the setup process or while running the app, consider the following steps:
 
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+Double-check that you've correctly configured your environment variables in the .env file.
+Ensure you have Node.js and npm (or yarn) installed on your system.
+Make sure you have Xcode (for iOS development) or Android Studio (for Android development) properly set up.
+Clear the npm or yarn cache and node_modules directory, then run the installation step again.
+If the problem persists, please open an issue on our GitHub repository. We'll be glad to assist you!
 
-# Learn More
+## License
 
-To learn more about React Native, take a look at the following resources:
+This repository is licensed under the [MIT License](LICENSE).
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+## Contact
+
+If you have any questions, suggestions, or just want to connect, you can reach me at:
+
+- Email: alkan.atakan@outlook.com
+- LinkedIn: [Atakan Alkan](https://www.linkedin.com/in/atakanalkn/)
