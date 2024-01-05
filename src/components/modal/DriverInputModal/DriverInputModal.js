@@ -17,8 +17,8 @@ const DriverInputModal = ({isVisible, onSend, onClose}) => {
   const [open, setOpen] = useState(false);
   const [gender, setGender] = useState(null);
   const [items, setItems] = useState([
-    {label: 'Male', value: 'male'},
-    {label: 'Female', value: 'female'},
+    {label: 'Erkek', value: 'male'},
+    {label: 'Kadın', value: 'female'},
   ]);
 
   const handleSend = async () => {

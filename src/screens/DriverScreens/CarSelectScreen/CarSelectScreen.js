@@ -6,11 +6,11 @@ import parseCarData from '../../../utils/parseData';
 import CarSelectCard from './components/CarSelectCard/CarSelectCard';
 
 const CarSelectScreen = ({navigation, route}) => {
-  const {driverInfo} = route.params;
+  const {parsedDriverInfo} = route.params;
   const [carList, setCarList] = useState('');
 
   const goDriveScreen = item => {
-    navigation.navigate('DriveScreen', {item, driverInfo});
+    navigation.navigate('DriveScreen', {item, parsedDriverInfo});
   };
   const renderCar = ({item}) => {
     return <CarSelectCard data={item} onPress={() => goDriveScreen(item)} />;

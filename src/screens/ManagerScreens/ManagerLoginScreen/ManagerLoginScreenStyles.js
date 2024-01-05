@@ -4,8 +4,9 @@ export default StyleSheet.create({
   container: {
     flex: 1,
     padding: 15,
+    paddingTop: 80,
     backgroundColor: '#253343',
-    justifyContent: 'space-around',
+    justifyContent: 'center',
   },
   loginText: {
     fontSize: 40,
@@ -17,7 +18,7 @@ export default StyleSheet.create({
     fontSize: 14,
     fontWeight: 'bold',
     color: 'white',
-    marginBottom: 20,
+    marginBottom: 10,
   },
   hint: {
     color: '#00B86B',
@@ -26,7 +27,7 @@ export default StyleSheet.create({
     marginBottom: 8,
   },
   bottomContainer: {
-    marginTop: 20,
+    marginTop: 50,
   },
   support: {
     flexDirection: 'row',

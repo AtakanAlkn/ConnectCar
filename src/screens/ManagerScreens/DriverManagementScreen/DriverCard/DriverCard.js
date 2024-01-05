@@ -3,8 +3,10 @@ import {View, Text, TouchableOpacity} from 'react-native';
 import styles from './DriverCardStyles';
 import Icon from 'react-native-vector-icons/Fontisto';
 import colors from '../../../../assets/Colors/colors';
+import useTimeConvert from '../../../../utils/useTimeConvert';
 
 const DriverCard = ({data, onPress}) => {
+  const timeValue = useTimeConvert(data.time);
   return (
     <TouchableOpacity style={styles.container} onPress={onPress}>
       <View style={styles.iconBox}>
@@ -14,14 +16,14 @@ const DriverCard = ({data, onPress}) => {
         <Text style={styles.text}>{data.name}</Text>
         <Text style={styles.text}>
           {data.wrong
-            ? data.time + 'adet hatalı sürüş'
+            ? data.wrong + ' adet hatalı sürüş'
             : data.time
             ? 'Kusursuz sürüş'
             : null}
         </Text>
         <Text style={styles.text}>
           {data.time
-            ? data.time + 'saatlik sürüş'
+            ? timeValue + ' saatlik sürüş'
             : 'Sürüş deneyimi bulunmuyor'}
         </Text>
       </View>

@@ -31,7 +31,14 @@ const CarsCard = ({data}) => {
           }}>
           <Text style={{fontWeight: 'bold', fontSize: 18}}>{data.license}</Text>
           {data.inUse ? (
-            <Text style={{...styles.inUseText, color: 'red'}}>Kullanımda</Text>
+            <View style={{alignItems: 'center'}}>
+              <Text style={{...styles.inUseText, color: 'red'}}>
+                Kullanımda
+              </Text>
+              <Text style={{...styles.inUseText, color: 'red'}}>
+                {data.driver.name}
+              </Text>
+            </View>
           ) : (
             <Text style={styles.inUseText}>Boş</Text>
           )}

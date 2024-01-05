@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {View, Text, TextInput} from 'react-native';
 import styles from './InputStyles';
 
-const Input = ({onChangeText, secureTextEntry = false}) => {
+const Input = ({onChangeText, secureTextEntry = false, onFocus}) => {
   const [text, setText] = useState('');
 
   return (
@@ -15,6 +15,7 @@ const Input = ({onChangeText, secureTextEntry = false}) => {
         }}
         value={text}
         secureTextEntry={secureTextEntry}
+        onFocus={onFocus}
       />
     </View>
   );

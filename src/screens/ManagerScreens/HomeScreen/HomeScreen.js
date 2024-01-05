@@ -8,12 +8,12 @@ const HomeScreen = ({navigation}) => {
     <View style={styles.container}>
       <Button
         title="Araçlar"
+        theme="secondary"
         onPress={() => navigation.navigate('DashboardScreen')}
       />
-      <View style={{margin: 20}}></View>
+      <View style={{margin: 10}}></View>
       <Button
         title="Sürücüler"
-        theme="secondary"
         onPress={() => {
           navigation.navigate('DriverManagementScreen');
         }}

@@ -1,18 +1,17 @@
-import React, {useState} from 'react';
-import {View, Text, Image} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {View, Text, Image, Keyboard, KeyboardAvoidingView} from 'react-native';
 import styles from './LoginScreenStyles';
 import Input from '../../../components/Input';
 import Button from '../../../components/Button';
 import database from '@react-native-firebase/database';
 import {showMessage} from 'react-native-flash-message';
+import parseData from '../../../utils/parseData';
 
 const LoginScreen = ({navigation}) => {
   const [text, setText] = useState('');
   const [isEnable, setIsEnable] = useState(false);
   const reference = database().ref('/drivers');
-
-  reference.once('value').then(snapshot => {});
-
+  const [keyboard, setKeyboard] = useState(false);
   const handleLogin = () => {
     setIsEnable(true);
     if (!text) {
@@ -32,7 +31,8 @@ const LoginScreen = ({navigation}) => {
           const driverData = snapshot.val();
           const driverKey = Object.keys(driverData)[0];
           const driverInfo = driverData[driverKey];
-          navigation.navigate('DrivingWarningScreen', {driverInfo});
+          const parsedDriverInfo = parseData(driverData);
+          navigation.navigate('DrivingWarningScreen', {parsedDriverInfo});
           setIsEnable(false);
         } else {
           showMessage({
@@ -49,15 +49,46 @@ const LoginScreen = ({navigation}) => {
         });
       });
   };
+
+  useEffect(() => {
+    const keyboardDidShowListener = Keyboard.addListener(
+      'keyboardDidShow',
+      () => {
+        setKeyboard(true);
+      },
+    );
+
+    const keyboardDidHideListener = Keyboard.addListener(
+      'keyboardDidHide',
+      () => {
+        setKeyboard(false);
+      },
+    );
+
+    return () => {
+      keyboardDidShowListener.remove();
+      keyboardDidHideListener.remove();
+    };
+  }, []);
+
   return (
     <View style={styles.container}>
       <View style={styles.innerContainer}>
         <View style={styles.imageContainer}>
           <Image
             source={require('../../../assets/Images/loginCar.png')}
-            style={styles.image}
+            style={
+              !keyboard
+                ? styles.image
+                : {...styles.image, width: 100, height: 100}
+            }
           />
-          <Text style={styles.header}>Giriş Yap</Text>
+          <Text
+            style={
+              !keyboard ? styles.header : {...styles.header, fontSize: 20}
+            }>
+            Giriş Yap
+          </Text>
         </View>
         <View>
           <Text style={styles.hint}>Sürücü kimliğinizi girin</Text>

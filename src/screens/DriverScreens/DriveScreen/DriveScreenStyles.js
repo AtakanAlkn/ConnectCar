@@ -43,4 +43,33 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  startBox: {
+    flex: 1,
+    marginTop: 20,
+  },
+  sensor: {
+    flex: 1,
+    alignItems: 'center',
+  },
+  innerSensor: {
+    width: 140,
+    height: 140,
+    borderRadius: 70,
+    borderWidth: 2,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderColor: 'black',
+  },
+  km: {
+    fontWeight: 'bold',
+    color: colors.secondary,
+  },
+  infoBox: {
+    flex: 1,
+    marginHorizontal: 30,
+    flexDirection: 'row',
+
+    justifyContent: 'space-around',
+    alignItems: 'center',
+  },
 });

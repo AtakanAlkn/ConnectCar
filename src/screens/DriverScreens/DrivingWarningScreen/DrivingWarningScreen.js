@@ -7,9 +7,9 @@ import ThirdWarning from './components/Warnings/ThirdWarning';
 import Swiper from 'react-native-swiper';
 
 const DrivingWarningScreen = ({navigation, route}) => {
-  const {driverInfo} = route.params;
+  const {parsedDriverInfo} = route.params;
   const onStart = () => {
-    navigation.navigate('CarSelectScreen', {driverInfo});
+    navigation.navigate('CarSelectScreen', {parsedDriverInfo});
   };
   return (
     <View style={styles.container}>
