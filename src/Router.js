@@ -7,6 +7,8 @@ import DrivingWarningScreen from './screens/DriverScreens/DrivingWarningScreen';
 import CarSelectScreen from './screens/DriverScreens/CarSelectScreen';
 import DashboardScreen from './screens/ManagerScreens/DashboardScreen';
 import DriveScreen from './screens/DriverScreens/DriveScreen/DriveScreen';
+import HomeScreen from './screens/ManagerScreens/HomeScreen';
+import DriverManagementScreen from './screens/ManagerScreens/DriverManagementScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -27,6 +29,11 @@ const Router = () => {
         <Stack.Screen name="CarSelectScreen" component={CarSelectScreen} />
         <Stack.Screen name="DashboardScreen" component={DashboardScreen} />
         <Stack.Screen name="DriveScreen" component={DriveScreen} />
+        <Stack.Screen name="HomeScreen" component={HomeScreen} />
+        <Stack.Screen
+          name="DriverManagementScreen"
+          component={DriverManagementScreen}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

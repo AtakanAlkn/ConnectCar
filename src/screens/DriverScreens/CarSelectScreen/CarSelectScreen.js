@@ -2,14 +2,15 @@ import React, {useState, useEffect} from 'react';
 import {View, Text, Image, FlatList} from 'react-native';
 import styles from './CarSelectScreenStyles';
 import database from '@react-native-firebase/database';
-import parseCarData from '../../../utils/parseCarData';
+import parseCarData from '../../../utils/parseData';
 import CarSelectCard from './components/CarSelectCard/CarSelectCard';
 
-const CarSelectScreen = ({navigation}) => {
+const CarSelectScreen = ({navigation, route}) => {
+  const {driverInfo} = route.params;
   const [carList, setCarList] = useState('');
 
   const goDriveScreen = item => {
-    navigation.navigate('DriveScreen', {item});
+    navigation.navigate('DriveScreen', {item, driverInfo});
   };
   const renderCar = ({item}) => {
     return <CarSelectCard data={item} onPress={() => goDriveScreen(item)} />;

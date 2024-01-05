@@ -1,29 +1,28 @@
 import React, {useState, useEffect} from 'react';
-import {View, FlatList} from 'react-native';
-import styles from './DashboardScreenStyles';
-import database from '@react-native-firebase/database';
-import parseData from '../../../utils/parseData';
-import CarsCard from './components/CarsCard';
-import CarInputModal from '../../../components/modal/CarInputModal';
+import {View, Text, FlatList} from 'react-native';
+import styles from './DriverManagementScreenStyles';
 import FloatButton from '../../../components/FloatButton';
+import DriverInputModal from '../../../components/modal/DriverInputModal';
+import database from '@react-native-firebase/database';
 import {showMessage} from 'react-native-flash-message';
+import parseData from '../../../utils/parseData';
+import DriverCard from './DriverCard/DriverCard';
 
-const DashboardScreen = () => {
-  const [carList, setCarList] = useState('');
+const DriverManagementScreen = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const newReference = database().ref('/cars');
+  const [driverList, setDriverList] = useState('');
 
+  const newReference = database().ref('/drivers');
   useEffect(() => {
     newReference.on('value', snapshot => {
       const data = snapshot.val();
-      const parsedCarData = parseData(data);
-      setCarList(parsedCarData);
+      if (!data) {
+        return;
+      }
+      const parsedDriverData = parseData(data);
+      setDriverList(parsedDriverData);
     });
   }, []);
-
-  const renderCar = ({item}) => {
-    return <CarsCard data={item} />;
-  };
 
   const toggleVisible = () => {
     setIsVisible(!isVisible);
@@ -35,22 +34,26 @@ const DashboardScreen = () => {
       .push(data)
       .then(response => {
         showMessage({
-          message: 'Araç ekleme başarılı',
+          message: 'Sürücü ekleme başarılı',
           type: 'success',
         });
       })
       .catch(error => {
         showMessage({
-          message: 'Araç eklenemedi',
+          message: 'Sürücü eklenemedi',
           description: error.name,
           type: 'danger',
         });
       });
   };
+
+  const renderDriver = ({item}) => {
+    return <DriverCard data={item} onPress={() => null} />;
+  };
   return (
     <View style={styles.container}>
-      <FlatList data={carList} renderItem={renderCar} />
-      <CarInputModal
+      <FlatList data={driverList} renderItem={renderDriver} />
+      <DriverInputModal
         isVisible={isVisible}
         onClose={toggleVisible}
         onSend={handleSend}
@@ -60,4 +63,4 @@ const DashboardScreen = () => {
   );
 };
 
-export default DashboardScreen;
+export default DriverManagementScreen;

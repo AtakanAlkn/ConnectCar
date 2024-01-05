@@ -26,7 +26,7 @@ const ManagerLoginScreen = ({navigation}) => {
       auth()
         .signInWithEmailAndPassword(mail, password)
         .then(() => {
-          navigation.navigate('DashboardScreen');
+          navigation.navigate('HomeScreen');
           setIsEnable(false);
         })
         .catch(er => {

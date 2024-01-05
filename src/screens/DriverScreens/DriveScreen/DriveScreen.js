@@ -1,8 +1,7 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {View, Text, Image, TouchableOpacity, Button} from 'react-native';
 import styles from './DriveScreenStyles';
 import Icon from 'react-native-vector-icons/Entypo';
-import BleManager from 'react-native-ble-manager';
 
 const DriveScreen = ({route}) => {
   const modelImageMap = {
@@ -13,7 +12,7 @@ const DriveScreen = ({route}) => {
     Van: require('../../../assets/Images/van.png'),
   };
   const {item} = route.params;
-
+  const {driverInfo} = route.params;
   const modelImage =
     modelImageMap[item.style] || require('../../../assets/Images/sedan.png');
 

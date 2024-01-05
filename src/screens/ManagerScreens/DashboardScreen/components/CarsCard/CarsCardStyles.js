@@ -33,6 +33,7 @@ export default StyleSheet.create({
     fontSize: 16,
     marginHorizontal: 2,
   },
+
   textContainer: {
     flexDirection: 'row',
     flex: 1,
