@@ -4,8 +4,9 @@
 
 **ConnectCar** is a mobile application that aims to improve the driving experience with advanced vehicle tracking and driver management features. Seamlessly integrates with Arduino-based hardware, enabling real-time transfer of important vehicle data to the app via Bluetooth. ConnectCar leverages the power of Firebase Authentication and Realtime Database to provide secure user authentication and streamlined data storage.
 
-**Bluetooth Module Under Development**
-I would like to inform you that the Bluetooth module is currently under development. I anticipate completing this module shortly and appreciate your patience. Stay tuned for the upcoming release!
+## Bluetooth Module Under Development!
+
+**I would like to inform you that the Bluetooth module is currently under development. I anticipate completing this module shortly and appreciate your patience. Stay tuned for the upcoming release!**
 
 ## Project Preview
 
